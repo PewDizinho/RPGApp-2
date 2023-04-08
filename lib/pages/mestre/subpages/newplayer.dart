@@ -154,7 +154,10 @@ void prompt(BuildContext context, PewsUtil util, String header, String inputMsg,
                   SizedBox(
                     height: 2.h,
                   ),
-                  util.getInputText(context, inputMsg, (value) => null, null),
+                  util.getInputText(context, inputMsg, (value) {
+                    String formatedType = inputMsg.replaceAll(" ", "-").toLowerCase();
+                    
+                  }, null),
                 ],
               ),
               actions: <Widget>[

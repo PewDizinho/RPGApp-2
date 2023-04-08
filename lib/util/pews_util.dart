@@ -13,7 +13,7 @@ class PewsUtil {
   }
 
   Widget getInputText(
-      BuildContext context, String text, onChanged(value), double? size) {
+      BuildContext context, String text,  onChanged(value), double? size) {
     return SizedBox(
       width: size ??= 80.w,
       child: TextField(
