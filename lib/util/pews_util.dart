@@ -12,6 +12,42 @@ class PewsUtil {
     return Config();
   }
 
+  Widget getInputText(
+      BuildContext context, String text, onChanged(value), double? size) {
+    return SizedBox(
+      width: size ??= 80.w,
+      child: TextField(
+        onChanged: ((value) => onChanged(value)),
+        textCapitalization: TextCapitalization.sentences,
+        textAlign: TextAlign.center,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: const Color.fromARGB(255, 0, 7, 12),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+            borderSide: BorderSide.none,
+          ),
+          hintText: text,
+        ),
+      ),
+    );
+  }
+
+  Widget getBackbutton(BuildContext context) {
+    return Center(
+      child: IconButton(
+          iconSize: 50.sp,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+            size: 50.sp,
+          )),
+    );
+  }
+
   Widget getButton(BuildContext context, IconData icon, String text,
       Function() tap, double? size) {
     size ??= 30.sp;

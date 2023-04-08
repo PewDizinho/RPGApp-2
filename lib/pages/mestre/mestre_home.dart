@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:rpg_app_2/pages/mestre/subpages/general.dart';
+import 'package:rpg_app_2/pages/mestre/subpages/newitem.dart';
+import 'package:rpg_app_2/pages/mestre/subpages/newnpc.dart';
+import 'package:rpg_app_2/pages/mestre/subpages/newplayer.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../util/pews_txt.dart';
@@ -83,13 +87,25 @@ class _MestreHomeState extends State<MestreHome> {
               const Spacer(
                 flex: 2,
               ),
-              util.getButton(context, Icons.person_add_alt_1, "New Player",
-                  () => null, 20.sp),
+              util.getButton(
+                  context,
+                  Icons.person_add_alt_1,
+                  "New Player",
+                  () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NewPlayer())),
+                  20.sp),
               const Spacer(
                 flex: 1,
               ),
-              util.getButton(context, Icons.person_add_alt_1, " New Npc ",
-                  () => null, 20.sp),
+              util.getButton(
+                  context,
+                  Icons.person_add_alt_1,
+                  " New Npc ",
+                  () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const NewNpc())),
+                  20.sp),
               const Spacer(
                 flex: 2,
               ),
@@ -103,13 +119,23 @@ class _MestreHomeState extends State<MestreHome> {
               const Spacer(
                 flex: 2,
               ),
-              util.getButton(context, Icons.person_add_alt_1, " New Item ",
-                  () => null, 20.sp),
+              util.getButton(
+                  context,
+                  Icons.person_add_alt_1,
+                  " New Item ",
+                  () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const NewItem())),
+                  20.sp),
               const Spacer(
                 flex: 1,
               ),
-              util.getButton(context, Icons.person_add_alt_1, "    Geral    ",
-                  () => null, 20.sp),
+              util.getButton(
+                  context,
+                  Icons.person_add_alt_1,
+                  "    Geral    ",
+                  () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const General())),
+                  20.sp),
               const Spacer(
                 flex: 2,
               ),
